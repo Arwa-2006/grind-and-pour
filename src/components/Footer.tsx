@@ -25,11 +25,12 @@ const ABOUT = [
   { href: "/about", label: "Our story" },
   { href: "/#grind", label: "Brew guide" },
   { href: "/#ratios", label: "Brew ratios" },
+  { href: "/blog/turkish-coffee-guide", label: "Turkish coffee guide" },
 ];
 
 const TRUST = [
   { Icon: Flame, label: "Roasted to order" },
-  { Icon: Truck, label: "Free shipping over $40" },
+  { Icon: Truck, label: "Free shipping over 1,000 EGP" },
   { Icon: ShieldCheck, label: "Secure checkout (demo)" },
 ];
 

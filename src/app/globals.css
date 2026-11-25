@@ -304,3 +304,8 @@ body {
     font-weight: 600;
   }
 }
+
+/* Arabic blocks use Tajawal (loaded in layout.tsx). */
+:lang(ar) {
+  font-family: var(--font-tajawal), var(--font-sans);
+}

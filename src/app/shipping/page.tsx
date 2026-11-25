@@ -31,12 +31,12 @@ export default function ShippingPage() {
             <tr>
               <td>Standard</td>
               <td>3–5 business days</td>
-              <td>$5, free on orders of $40 or more</td>
+              <td>50 EGP, free on orders of 1,000 EGP or more</td>
             </tr>
             <tr>
               <td>Express</td>
               <td>1–2 business days</td>
-              <td>$12</td>
+              <td>100 EGP</td>
             </tr>
           </tbody>
         </table>

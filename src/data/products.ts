@@ -1,5 +1,5 @@
 /**
- * The Grind & Pour catalog (demo brand): coffee only. All prices are in USD.
+ * The Grind & Pour catalog (demo brand): coffee only. All prices are in Egyptian pounds (EGP).
  *
  * Images follow a convention: public/images/products/<slug>/1.webp, 2.webp, …
  * Every product lists the candidate paths; only the files that exist at build
@@ -15,7 +15,7 @@ export type Product = {
   name: string;
   roast: Roast;
   style: Style;
-  /** Base price in USD (250 g). */
+  /** Base price in EGP (250 g). */
   price: number;
   /** Bag sizes. */
   variants: Variant[];
@@ -59,10 +59,11 @@ const MAX_IMAGES = 8;
 const gallery = (slug: string) =>
   Array.from({ length: MAX_IMAGES }, (_, i) => `/images/products/${slug}/${i + 1}.webp`);
 
-const SIZES: Variant[] = [
+/** Bag sizes, priced by weight: 500 g costs twice the 250 g bag, 1 kg four times (e.g. 250 / 500 / 1,000 EGP). */
+const sizesFor = (base: number): Variant[] => [
   { id: "250g", label: "250 g", priceDelta: 0 },
-  { id: "500g", label: "500 g", priceDelta: 14 },
-  { id: "1kg", label: "1 kg", priceDelta: 26 },
+  { id: "500g", label: "500 g", priceDelta: base },
+  { id: "1kg", label: "1 kg", priceDelta: base * 3 },
 ];
 
 export const GRIND_OPTIONS = ["Whole bean", "Pour-over", "French press", "Espresso", "Turkish (extra fine)"];
@@ -70,7 +71,7 @@ export const GRIND_OPTIONS = ["Whole bean", "Pour-over", "French press", "Espres
 const coffee = (
   p: Omit<Product, "variants" | "grindOptions" | "images" | "cupImage"> & { grindOptions?: string[] },
 ): Product => ({
-  variants: SIZES,
+  variants: sizesFor(p.price),
   grindOptions: GRIND_OPTIONS,
   images: gallery(p.slug),
   cupImage: `/images/products/${p.slug}/cup.webp`,
@@ -85,7 +86,7 @@ export const PRODUCTS: Product[] = [
     name: "Sage Morning",
     roast: "light",
     style: "single-origin",
-    price: 18,
+    price: 350,
     short: "Ethiopia Yirgacheffe · jasmine, lemon, honey",
     description:
       "A delicate, tea-like Yirgacheffe that opens with jasmine and settles into lemon zest and wildflower honey. Washed and roasted light so the florals stay clear in the cup.",
@@ -108,7 +109,7 @@ export const PRODUCTS: Product[] = [
     name: "Terracotta Hearth",
     roast: "medium",
     style: "single-origin",
-    price: 16,
+    price: 310,
     short: "Colombia Huila · caramel, cocoa, red apple",
     description:
       "Our everyday cup: round and comforting, with caramel sweetness, a cocoa middle and a crisp red-apple finish. Forgiving to brew and easy to love, black or with a splash of milk.",
@@ -131,7 +132,7 @@ export const PRODUCTS: Product[] = [
     name: "Sky Drift",
     roast: "light",
     style: "single-origin",
-    price: 19,
+    price: 370,
     short: "Kenya AA, Nyeri · blackcurrant, grapefruit",
     description:
       "Juicy and bold, the way great Kenyan coffee should be: blackcurrant and pink grapefruit over a syrupy body. A light-medium roast keeps the acidity lively without letting it turn sharp.",
@@ -154,7 +155,7 @@ export const PRODUCTS: Product[] = [
     name: "Midnight Roast",
     roast: "dark",
     style: "single-origin",
-    price: 15,
+    price: 290,
     short: "Brazil Cerrado · dark chocolate, molasses, toasted nut",
     description:
       "Deep, low-acid and generous: dark chocolate and molasses with a toasted-nut finish. A natural Cerrado roasted dark, built for milk drinks and still smooth as a slow pour-over.",
@@ -177,7 +178,7 @@ export const PRODUCTS: Product[] = [
     name: "Golden Hour",
     roast: "medium",
     style: "single-origin",
-    price: 17,
+    price: 330,
     short: "Guatemala Huehuetenango · brown sugar, orange, almond",
     description:
       "Grown high in Huehuetenango, this washed Guatemalan tastes like late-afternoon light: brown sugar, sweet orange and a soft almond finish. Balanced enough for any brewer you own.",
@@ -200,7 +201,7 @@ export const PRODUCTS: Product[] = [
     name: "Haraz Mocha",
     roast: "medium",
     style: "single-origin",
-    price: 26,
+    price: 500,
     short: "Yemen, Haraz mountains · dried fig, raisin, warm spice",
     description:
       "From terraced farms in the Haraz mountains, one of coffee's oldest homes. Sun-dried naturally, it's rich with dried fig, raisin and warm spice: a rare, slow-sipping cup.",
@@ -223,7 +224,7 @@ export const PRODUCTS: Product[] = [
     name: "Cardamom Qahwa",
     roast: "light",
     style: "arabic-turkish",
-    price: 14,
+    price: 270,
     grindOptions: ["Arabic coffee grind"],
     short: "Arabic coffee blend · green cardamom, honey, light & fragrant",
     description:
@@ -247,7 +248,7 @@ export const PRODUCTS: Product[] = [
     name: "Turkish Gold",
     roast: "dark",
     style: "arabic-turkish",
-    price: 13,
+    price: 250,
     grindOptions: ["Turkish (extra fine)"],
     short: "Brazil & Ethiopia blend · cocoa, roasted hazelnut, thick foam",
     description:
@@ -271,7 +272,7 @@ export const PRODUCTS: Product[] = [
     name: "Velvet Shot Espresso",
     roast: "dark",
     style: "blend",
-    price: 17,
+    price: 330,
     short: "Brazil, Colombia & Ethiopia · milk chocolate, cherry, syrupy",
     description:
       "Our espresso blend, built for body: a syrupy shot of milk chocolate with a bright cherry lift from the Ethiopian component. It cuts through milk beautifully in a flat white.",
@@ -294,7 +295,7 @@ export const PRODUCTS: Product[] = [
     name: "Night Owl Decaf",
     roast: "medium",
     style: "decaf",
-    price: 16,
+    price: 310,
     short: "Colombia · Swiss Water decaf · cocoa, caramel, soft",
     description:
       "All the comfort, none of the late-night buzz. Decaffeinated with only water by the Swiss Water process, it keeps a soft cocoa-and-caramel sweetness that tastes like the real thing.",

@@ -66,7 +66,7 @@ export function CartLines({ items, compact = false }: { items: CartItem[]; compa
   );
 }
 
-/** "Free shipping over $40" progress. The bar animates with transform only, so nothing reflows. */
+/** "Free shipping over 1,000 EGP" progress. The bar animates with transform only, so nothing reflows. */
 export function FreeShippingBar({ subtotal }: { subtotal: number }) {
   const left = FREE_SHIPPING_CENTS - subtotal;
   const ratio = Math.min(1, subtotal / FREE_SHIPPING_CENTS);

@@ -316,7 +316,7 @@ export function CheckoutView() {
                         </span>
                         <span className="mt-1 block text-[15px] text-roast">
                           {m.days}
-                          {key === "standard" && price > 0 && " · free on orders of $40 or more"}
+                          {key === "standard" && price > 0 && " · free on orders of 1,000 EGP or more"}
                         </span>
                       </span>
                     </label>

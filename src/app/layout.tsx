@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Sans, Fraunces } from "next/font/google";
+import { DM_Sans, Fraunces, Tajawal } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { MotionProvider } from "@/components/MotionProvider";
 import { Navbar } from "@/components/Navbar";
@@ -21,6 +21,14 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
+/** Arabic text (product page extras and the Turkish coffee article). */
+const tajawal = Tajawal({
+  variable: "--font-tajawal",
+  subsets: ["arabic"],
+  weight: ["400", "500", "700"],
+  display: "swap",
+});
+
 /** Absolute base for Open Graph image URLs: the Vercel production domain when deployed. */
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
@@ -39,7 +47,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${dmSans.variable} antialiased`}>
+    <html lang="en" className={`${fraunces.variable} ${dmSans.variable} ${tajawal.variable} antialiased`}>
       <body>
         <MotionProvider>
           <a

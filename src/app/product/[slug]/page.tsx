@@ -5,9 +5,11 @@ import { Suspense } from "react";
 import { AccordionItem } from "@/components/Accordion";
 import { PageMain } from "@/components/PageHeader";
 import { Gallery } from "@/components/product/Gallery";
+import { ArabicIntro, InfoAccordions, Reviews } from "@/components/product/ProductExtras";
 import { ProductPurchase } from "@/components/product/ProductPurchase";
 import { Carousel } from "@/components/shop/Carousel";
 import { AccentDot, ProductCard, SoldOutBadge } from "@/components/shop/ProductCard";
+import { getProductInfo } from "@/data/product-info";
 import { ROAST_LABELS, STYLE_LABELS, type Product } from "@/data/products";
 import { CATALOG, getProduct, isArabicTurkish, relatedTo } from "@/lib/catalog";
 
@@ -49,6 +51,12 @@ function BrewingTips({ product }: { product: Product }) {
           <li>Take it off the heat as soon as the foam rises. Don&apos;t let it boil.</li>
           <li>Spoon the foam into the cup, pour, and let it settle for a minute before sipping.</li>
         </ol>
+        <p className="mt-3">
+          Step-by-step in Arabic:{" "}
+          <Link href="/blog/turkish-coffee-guide" className={filmLink}>
+            طريقة عمل القهوة التركي المظبوطة
+          </Link>
+        </p>
       </>
     );
   }
@@ -110,6 +118,7 @@ async function ProductDetails({ params }: { params: PageProps<"/product/[slug]">
   const product = getProduct((await params).slug);
   if (!product) notFound();
   const related = relatedTo(product);
+  const info = getProductInfo(product.slug);
 
   return (
     <>
@@ -157,6 +166,7 @@ async function ProductDetails({ params }: { params: PageProps<"/product/[slug]">
           </h1>
           <p className="mt-4 text-lg text-roast">{product.short}</p>
           <p className="mt-4 text-[17px] leading-relaxed text-espresso">{product.description}</p>
+          {info && <ArabicIntro info={info} />}
 
           <div className="mt-8">
             <ProductPurchase product={product} />
@@ -173,13 +183,14 @@ async function ProductDetails({ params }: { params: PageProps<"/product/[slug]">
                 ))}
               </dl>
             </AccordionItem>
+            {info && <InfoAccordions info={info} />}
             <AccordionItem title="Brewing tips">
               <BrewingTips product={product} />
             </AccordionItem>
             <AccordionItem title="Shipping & returns">
               <p>
-                Roasted to order and shipped within 2 business days. Standard delivery (3–5 days) is $5, or free over $40;
-                express (1–2 days) is $12. Unopened bags can be returned within 14 days.
+                Roasted to order and shipped within 2 business days. Standard delivery (3–5 days) is 50 EGP, or free over 1,000 EGP;
+                express (1–2 days) is 100 EGP. Unopened bags can be returned within 14 days.
               </p>
               <p className="mt-3 flex gap-4">
                 <Link href="/shipping" className={filmLink}>
@@ -193,6 +204,8 @@ async function ProductDetails({ params }: { params: PageProps<"/product/[slug]">
           </div>
         </div>
       </div>
+
+      {info && <Reviews info={info} />}
 
       {related.length > 0 && (
         <section aria-labelledby="related-title" className="mt-20 lg:mt-28">

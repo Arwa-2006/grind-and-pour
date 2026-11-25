@@ -54,12 +54,50 @@ const FAQ = [
     q: "How long does delivery take?",
     a: (
       <>
-        Standard takes 3–5 business days ($5, free over $40) and express takes 1–2 ($12). See{" "}
+        Standard takes 3–5 business days (50 EGP, free over 1,000 EGP) and express takes 1–2 (100 EGP). See{" "}
         <Link href="/shipping" className={link}>
           shipping &amp; delivery
         </Link>
         .
       </>
+    ),
+  },
+  {
+    q: "How do I make Turkish coffee? · كيف أعمل القهوة التركي؟",
+    a: (
+      <span lang="ar" dir="rtl" className="block text-right">
+        لكل فنجان: 70 مل ماء بارد و7 غ قهوة، تُقلَّب مرة واحدة ثم تُسخَّن على نار هادئة وتُرفع قبل الغليان عندما يرتفع الوش.
+        الخطوات كاملة في{" "}
+        <Link href="/blog/turkish-coffee-guide" className={link}>
+          طريقة عمل القهوة التركي المظبوطة
+        </Link>
+        .
+      </span>
+    ),
+  },
+  {
+    q: "Is Turkish Gold ground for the cezve? · هل Turkish Gold مطحونة للكنكة؟",
+    a: (
+      <span lang="ar" dir="rtl" className="block text-right">
+        نعم، تأتي مطحونة ناعمة جدًا (طحنة تركي) فقط، وهي مناسبة للكنكة مباشرة. لا تصلح للإسبريسو أو الفلتر.
+      </span>
+    ),
+  },
+  {
+    q: "How long does Turkish coffee stay fresh? · كم تبقى القهوة طازجة؟",
+    a: (
+      <span lang="ar" dir="rtl" className="block text-right">
+        الأفضل خلال 3 أشهر من تاريخ التحميص المطبوع على الكيس، وخلال 4 أسابيع بعد الفتح. احفظها مغلقة في مكان بارد وجاف،
+        وليس في الثلاجة.
+      </span>
+    ),
+  },
+  {
+    q: "Is it suitable for everyone? · هل تناسب الجميع؟",
+    a: (
+      <span lang="ar" dir="rtl" className="block text-right">
+        تحتوي على الكافيين، فلا يُنصح بها للأطفال. على الحوامل والمرضعات ومن لديهم مشاكل في القلب أو الضغط استشارة الطبيب أولًا.
+      </span>
     ),
   },
   {
