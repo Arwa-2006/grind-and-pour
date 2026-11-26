@@ -1,11 +1,9 @@
-/** Contact details and social links, in one place so placeholders are easy to fill in later. */
+/** Contact details and social links, in one place so they are easy to update. */
 export const SITE = {
-  email: "aseel.alqedra2004@gmail.com",
-  website: { label: "aseel-alqedra.vercel.app", href: "https://aseel-alqedra.vercel.app" },
+  email: "arwa.mah2006@gmail.com",
+  website: { label: "github.com/Arwa-2006", href: "https://github.com/Arwa-2006" },
   socials: {
-    linkedin: "https://www.linkedin.com/in/aseel-al-qedra",
-    github: "https://github.com/aseelmahmoud115",
-    facebook: "#", // placeholder
-    youtube: "#", // placeholder
+    linkedin: "https://www.linkedin.com/in/arwa-mahmoud-al-qedra-297a53355",
+    github: "https://github.com/Arwa-2006",
   },
 } as const;

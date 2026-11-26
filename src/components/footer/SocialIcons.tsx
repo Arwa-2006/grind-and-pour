@@ -1,12 +1,10 @@
-import { FaFacebook, FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa6";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { SITE } from "@/data/site";
 
 /** Brand glyphs from one icon family (Font Awesome 6 via react-icons), monochrome cream. */
 const LINKS = [
   { label: "LinkedIn", href: SITE.socials.linkedin, Icon: FaLinkedin },
   { label: "GitHub", href: SITE.socials.github, Icon: FaGithub },
-  { label: "Facebook", href: SITE.socials.facebook, Icon: FaFacebook },
-  { label: "YouTube", href: SITE.socials.youtube, Icon: FaYoutube },
 ];
 
 export function SocialIcons() {
@@ -14,7 +12,7 @@ export function SocialIcons() {
     <ul className="flex gap-2">
       {LINKS.map(({ label, href, Icon }) => {
         // Placeholders ("#") stay on the page; real profiles open in a new tab.
-        const external = href.startsWith("http");
+        const external = (href as string).startsWith("http");
         return (
           <li key={label}>
             <a

@@ -77,5 +77,5 @@ The briefs this site was built from, in order:
 
 ## Credits
 
-Demo project by Aseel Alqedra ([github.com/aseelmahmoud115](https://github.com/aseelmahmoud115)).
+Course project by Arwa Alqedra ([github.com/Arwa-2006](https://github.com/Arwa-2006)).
 Visuals generated with AI. Layout inspired by a concept by Cool Vision Studio.

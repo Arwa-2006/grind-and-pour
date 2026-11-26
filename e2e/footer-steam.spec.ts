@@ -26,15 +26,15 @@ test("newsletter: stacked with a full-width button at 375px", async ({ page }) =
   expect(Math.round(button.width)).toBe(Math.round(input.width));
 });
 
-test("footer: real contact links and the four social icons", async ({ page }) => {
+test("footer: real contact links and the two social icons", async ({ page }) => {
   await page.goto("/faq", { waitUntil: "domcontentloaded" });
   const footer = page.getByRole("contentinfo");
-  await expect(footer.getByRole("link", { name: "aseel.alqedra2004@gmail.com" })).toHaveAttribute("href", "mailto:aseel.alqedra2004@gmail.com");
-  await expect(footer.getByRole("link", { name: "aseel-alqedra.vercel.app" })).toHaveAttribute("target", "_blank");
+  await expect(footer.getByRole("link", { name: "arwa.mah2006@gmail.com" })).toHaveAttribute("href", "mailto:arwa.mah2006@gmail.com");
+  await expect(footer.getByRole("link", { name: "github.com/Arwa-2006" })).toHaveAttribute("target", "_blank");
   await expect(footer).not.toContainText("Visuals generated with AI");
   const socials = footer.getByRole("link", { name: /^(LinkedIn|GitHub|Facebook|YouTube)$/ });
-  await expect(socials).toHaveCount(4);
-  await expect(footer.getByRole("link", { name: "LinkedIn" })).toHaveAttribute("href", "https://www.linkedin.com/in/aseel-al-qedra");
+  await expect(socials).toHaveCount(2);
+  await expect(footer.getByRole("link", { name: "LinkedIn" })).toHaveAttribute("href", "https://www.linkedin.com/in/arwa-mahmoud-al-qedra-297a53355");
   await expect(footer.getByRole("link", { name: "GitHub" })).toHaveAttribute("target", "_blank");
 });
 

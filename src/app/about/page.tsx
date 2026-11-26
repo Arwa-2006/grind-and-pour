@@ -27,7 +27,7 @@ export default function AboutPage() {
         </p>
         <h2>About this site</h2>
         <p>
-          Grind &amp; Pour is a demo project by Aseel Alqedra. Products, prices and policies are illustrative, no payments
+          Grind &amp; Pour is a course project by Arwa Alqedra (Al-Quds Open University). Products, prices and policies are illustrative, no payments
           are taken, and the visuals were generated with AI. The layout is inspired by a concept by Cool Vision Studio.
         </p>
       </div>
