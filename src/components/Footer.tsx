@@ -15,6 +15,7 @@ const SHOP = [
   { href: "/shop?style=decaf", label: "Decaf" },
 ];
 const HELP = [
+  { href: "/guide", label: "How to order" },
   { href: "/shipping", label: "Shipping & delivery" },
   { href: "/returns", label: "Returns & refunds" },
   { href: "/faq", label: "FAQ" },
