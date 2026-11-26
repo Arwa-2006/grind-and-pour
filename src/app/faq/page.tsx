@@ -63,42 +63,29 @@ const FAQ = [
     ),
   },
   {
-    q: "How do I make Turkish coffee? · كيف أعمل القهوة التركي؟",
+    q: "How do I make Turkish coffee?",
     a: (
-      <span lang="ar" dir="rtl" className="block text-right">
-        لكل فنجان: 70 مل ماء بارد و7 غ قهوة، تُقلَّب مرة واحدة ثم تُسخَّن على نار هادئة وتُرفع قبل الغليان عندما يرتفع الوش.
-        الخطوات كاملة في{" "}
+      <>
+        For each cup, stir 70 ml of cold water with 7 g of coffee once, heat it slowly on low, and take it off the heat as
+        the foam rises, before it boils. The full steps are in{" "}
         <Link href="/blog/turkish-coffee-guide" className={link}>
-          طريقة عمل القهوة التركي المظبوطة
+          how to make the perfect Turkish coffee
         </Link>
         .
-      </span>
+      </>
     ),
   },
   {
-    q: "Is Turkish Gold ground for the cezve? · هل Turkish Gold مطحونة للكنكة؟",
-    a: (
-      <span lang="ar" dir="rtl" className="block text-right">
-        نعم، تأتي مطحونة ناعمة جدًا (طحنة تركي) فقط، وهي مناسبة للكنكة مباشرة. لا تصلح للإسبريسو أو الفلتر.
-      </span>
-    ),
+    q: "Is Turkish Gold ground for the cezve?",
+    a: "Yes. It only comes powder-fine (Turkish grind), ready for the cezve. It isn't suitable for espresso or filter brewing.",
   },
   {
-    q: "How long does Turkish coffee stay fresh? · كم تبقى القهوة طازجة؟",
-    a: (
-      <span lang="ar" dir="rtl" className="block text-right">
-        الأفضل خلال 3 أشهر من تاريخ التحميص المطبوع على الكيس، وخلال 4 أسابيع بعد الفتح. احفظها مغلقة في مكان بارد وجاف،
-        وليس في الثلاجة.
-      </span>
-    ),
+    q: "How long does Turkish coffee stay fresh?",
+    a: "It's best within 3 months of the roast date printed on the bag, and within 4 weeks of opening. Keep it sealed somewhere cool and dry, not in the fridge.",
   },
   {
-    q: "Is it suitable for everyone? · هل تناسب الجميع؟",
-    a: (
-      <span lang="ar" dir="rtl" className="block text-right">
-        تحتوي على الكافيين، فلا يُنصح بها للأطفال. على الحوامل والمرضعات ومن لديهم مشاكل في القلب أو الضغط استشارة الطبيب أولًا.
-      </span>
-    ),
+    q: "Is it suitable for everyone?",
+    a: "It contains caffeine, so it isn't recommended for children. If you are pregnant, breastfeeding or have a heart or blood-pressure condition, check with your doctor first.",
   },
   {
     q: "Do you have a promo code?",

@@ -1,7 +1,7 @@
 /**
- * Extra product-page content for the Arabic-speaking market (course project:
- * Digital Marketing & Branding, Al-Quds Open University). Only coffees listed
- * here get the Arabic block, safety, product information and reviews sections.
+ * Extra product-page content (course project: Digital Marketing & Branding,
+ * Al-Quds Open University). Only coffees listed here get the intro card,
+ * safety & storage, product information and reviews sections.
  */
 
 export type Review = {
@@ -11,12 +11,12 @@ export type Review = {
   rating: number;
   /** Their words, unchanged. */
   text: string;
-  /** e.g. "نوفمبر 2026" */
+  /** e.g. "November 2026" */
   date: string;
 };
 
 export type ProductInfo = {
-  ar: { name: string; short: string; description: string; best: string[] };
+  intro: { title: string; text: string; best: string[] };
   safety: string[];
   storage: string[];
   legal: { label: string; value: string }[];
@@ -33,33 +33,31 @@ export const OPT_IN_FORM =
 
 export const PRODUCT_INFO: Record<string, ProductInfo> = {
   "turkish-gold": {
-    ar: {
-      name: "تركيش جولد — قهوة تركي",
-      short: "خلطة برازيلي وإثيوبي · كاكاو، بندق محمّص، وش كثيف",
-      description:
-        "قهوة تركي مطحونة ناعمة جدًا للكنكة، بتحميص وسط مائل للغامق. تطلع فنجانًا ثقيلًا ناعمًا بنكهة الكاكاو والبندق المحمّص ووش كثيف. حلوة سادة أو بقليل من السكر.",
-      best: ["الكنكة (الإبريق التركي)", "سادة أو مظبوط أو زيادة", "فنجان الصبح أو مع الضيوف"],
+    intro: {
+      title: "Made for the cezve",
+      text: "Turkish Gold is ground powder-fine, so it goes straight into your cezve: no grinder, no guesswork. Expect a heavy, smooth cup with cocoa, roasted hazelnut and a thick foam on top.",
+      best: ["Cezve / ibrik", "Plain, medium or sweet", "Morning cups and guests"],
     },
     safety: [
-      "تحتوي على الكافيين (حوالي 50–65 ملغ في الفنجان الواحد تقريبًا).",
-      "لا يُنصح بها للأطفال.",
-      "للحوامل والمرضعات ومن لديهم حساسية من الكافيين أو أمراض القلب أو الضغط: استشيروا الطبيب قبل الشرب.",
-      "يُفضّل عدم تجاوز 3–4 فناجين في اليوم للبالغين.",
+      "Contains caffeine (roughly 50–65 mg per small cup).",
+      "Not recommended for children.",
+      "If you are pregnant or breastfeeding, sensitive to caffeine, or have a heart or blood-pressure condition, ask your doctor first.",
+      "For most adults, up to 3–4 cups a day is a sensible limit.",
     ],
     storage: [
-      "في مكان بارد وجاف بعيدًا عن الشمس والحرارة.",
-      "أغلق الكيس جيدًا بعد كل استخدام، أو انقلها إلى علبة محكمة الإغلاق.",
-      "لا تضعها في الثلاجة: الرطوبة والروائح تفسد طعمها.",
+      "Keep in a cool, dry place away from sunlight and heat.",
+      "Reseal the bag tightly after each use, or move it to an airtight jar.",
+      "Don't keep it in the fridge: moisture and smells spoil the flavour.",
     ],
     legal: [
-      { label: "اسم المنتج", value: "Turkish Gold — بن تركي مطحون" },
-      { label: "المكوّنات", value: "100% بن أرابيكا محمّص ومطحون (بدون إضافات أو هيل)" },
-      { label: "بلد المنشأ", value: "البرازيل (سول دي ميناس) وإثيوبيا (سيداما)" },
-      { label: "الوزن الصافي", value: "250 غ / 500 غ / 1 كغ حسب الحجم المختار" },
-      { label: "تاريخ التحميص", value: "مطبوع على كل كيس" },
-      { label: "مدة الصلاحية", value: "الأفضل خلال 3 أشهر من تاريخ التحميص، و4 أسابيع بعد الفتح" },
-      { label: "ضمان الاستبدال", value: "إذا وصلك الكيس تالفًا أو القهوة غير طازجة نستبدله مجانًا خلال 14 يومًا" },
-      { label: "البائع", value: "Grind & Pour — متجر تجريبي لمشروع جامعي (جامعة القدس المفتوحة)" },
+      { label: "Product", value: "Turkish Gold, ground Turkish coffee" },
+      { label: "Ingredients", value: "100% roasted and ground arabica coffee (no additives, no cardamom)" },
+      { label: "Country of origin", value: "Brazil (Sul de Minas) and Ethiopia (Sidama)" },
+      { label: "Net weight", value: "250 g / 500 g / 1 kg, as selected" },
+      { label: "Roast date", value: "Printed on every bag" },
+      { label: "Best before", value: "Within 3 months of the roast date, and 4 weeks after opening" },
+      { label: "Replacement guarantee", value: "If your bag arrives damaged or the coffee isn't fresh, we replace it free within 14 days" },
+      { label: "Seller", value: "Grind & Pour, a demo store for a university project (Al-Quds Open University)" },
     ],
     reviews: [],
   },

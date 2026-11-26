@@ -5,7 +5,7 @@ import { Suspense } from "react";
 import { AccordionItem } from "@/components/Accordion";
 import { PageMain } from "@/components/PageHeader";
 import { Gallery } from "@/components/product/Gallery";
-import { ArabicIntro, InfoAccordions, Reviews } from "@/components/product/ProductExtras";
+import { InfoAccordions, ProductIntro, Reviews } from "@/components/product/ProductExtras";
 import { ProductPurchase } from "@/components/product/ProductPurchase";
 import { Carousel } from "@/components/shop/Carousel";
 import { AccentDot, ProductCard, SoldOutBadge } from "@/components/shop/ProductCard";
@@ -52,9 +52,9 @@ function BrewingTips({ product }: { product: Product }) {
           <li>Spoon the foam into the cup, pour, and let it settle for a minute before sipping.</li>
         </ol>
         <p className="mt-3">
-          Step-by-step in Arabic:{" "}
+          Full guide with sugar levels and common mistakes:{" "}
           <Link href="/blog/turkish-coffee-guide" className={filmLink}>
-            طريقة عمل القهوة التركي المظبوطة
+            How to make the perfect Turkish coffee
           </Link>
         </p>
       </>
@@ -166,7 +166,7 @@ async function ProductDetails({ params }: { params: PageProps<"/product/[slug]">
           </h1>
           <p className="mt-4 text-lg text-roast">{product.short}</p>
           <p className="mt-4 text-[17px] leading-relaxed text-espresso">{product.description}</p>
-          {info && <ArabicIntro info={info} />}
+          {info && <ProductIntro info={info} />}
 
           <div className="mt-8">
             <ProductPurchase product={product} />
