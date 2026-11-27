@@ -39,10 +39,10 @@ export const PRODUCT_INFO: Record<string, ProductInfo> = {
       best: ["Cezve / ibrik", "Plain, medium or sweet", "Morning cups and guests"],
     },
     safety: [
-      "Contains caffeine (roughly 50–65 mg per small cup).",
+      "Contains caffeine (roughly 80–110 mg per small cup).",
       "Not recommended for children.",
       "If you are pregnant or breastfeeding, sensitive to caffeine, or have a heart or blood-pressure condition, ask your doctor first.",
-      "For most adults, up to 3–4 cups a day is a sensible limit.",
+      "For healthy adults, up to 400 mg of caffeine a day (about 3–4 small cups) is considered safe; in pregnancy, up to 200 mg a day.",
     ],
     storage: [
       "Keep in a cool, dry place away from sunlight and heat.",
